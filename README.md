@@ -83,7 +83,9 @@ Upload an image to detect faces and analyze attributes.
 
 - **URL**: `/detect`
 - **Method**: `POST`
-- **Header**: `Content-Type: multipart/form-data`
+- **Headers**: 
+  - `Content-Type: multipart/form-data`
+  - `x-api-key`: <YOUR_API_KEY> **[Required]**
 - **Body**:
   - `image`: File (jpg, jpeg, png) OR URL string (http/https) **[Required]**
 

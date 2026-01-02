@@ -4,6 +4,7 @@ from flask import Blueprint, request, current_app
 from datetime import datetime
 from app.utils.responses import success_response, error_response
 from app.utils.validators import validate_image_request
+from app.utils.auth import require_api_key
 from app.services.deepface_service import DeepFaceService
 from app.config import Config
 
@@ -18,6 +19,7 @@ def health():
     }, status_code=200)
 
 @main_bp.route('/detect', methods=['POST'])
+@require_api_key
 def detect():
     # 1. Validate Input
     is_valid, error_reason, error_msg, status_code = validate_image_request(request)

@@ -17,6 +17,9 @@ class Config:
     MAX_CONTENT_LENGTH = int(os.getenv('MAX_IMAGE_MB', 5)) * 1024 * 1024  # Flask built-in limit
     MAX_IMAGE_MB = int(os.getenv('MAX_IMAGE_MB', 5))
     
+    # Security
+    API_KEY = os.getenv('API_KEY')
+
     LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
     
     # Supported extensions

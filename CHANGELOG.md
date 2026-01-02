@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-01-02
+
+### Added
+- **Security**: Endpoint `/detect` now requires `x-api-key` header.
+- `tf-keras` dependency to resolve compatibility issues with TensorFlow/RetinaFace on newer Python versions.
+
 ## [1.0.0] - 2026-01-02
 
 ### Added
