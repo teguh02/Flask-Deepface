@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  flask-deepface:
+    build: .
+    container_name: flask-deepface
+    ports:
+      - "${PORT:-5000}:5000"
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production
+      - PORT=5000 # Force internal port to 5000 regardless of env file
+      - CUDA_VISIBLE_DEVICES=-1 # Force CPU only (no GPU)
+    restart: unless-stopped

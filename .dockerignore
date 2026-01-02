@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+.env
+.vscode
+.idea
+.git
+.gitignore
+README.md
+CHANGELOG.md
+test_face.png
+image_for_test
