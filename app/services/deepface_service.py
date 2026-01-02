@@ -45,7 +45,7 @@ class DeepFaceService:
             
             results = DeepFace.analyze(
                 img_path=img,
-                actions=['age', 'emotion'],
+                actions=['age'], # Removed 'emotion' for performance
                 detector_backend=Config.DETECTOR_BACKEND,
                 enforce_detection=Config.ENFORCE_DETECTION,
                 silent=True # suppress logging
@@ -71,8 +71,8 @@ class DeepFaceService:
                 formatted_faces.append({
                     "bbox": bbox,
                     "age": face.get('age'),
-                    "dominant_emotion": face.get('dominant_emotion'),
-                    "emotion": face.get('emotion'),
+                    # "dominant_emotion": face.get('dominant_emotion'), # Removed
+                    # "emotion": face.get('emotion'), # Removed
                     "confidence": face.get('face_confidence', None) # Available in some backends/versions
                 })
                 

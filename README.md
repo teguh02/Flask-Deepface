@@ -99,8 +99,6 @@ Upload an image to detect faces and analyze attributes.
     {
       "bbox": { "x": 100, "y": 50, "w": 200, "h": 200 },
       "age": 28,
-      "dominant_emotion": "happy",
-      "emotion": { "happy": 99.5, "sad": 0.1, ... },
       "confidence": 0.98
     }
   ],
