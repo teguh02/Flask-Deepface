@@ -35,7 +35,8 @@ Copy the example environment file:
 ```bash
 cp .env.example .env
 ```
-Edit `.env` if needed (e.g., change `PORT` or `DETECTOR_BACKEND`).
+Edit `.env` if needed:
+- `API_KEY`: Set your secret key for authentication.
 - `DETECTOR_BACKEND`: `opencv` (default, fast), `retinaface` (slower, more accurate), etc.
 - `MAX_IMAGE_MB`: Max upload size in MB.
 
