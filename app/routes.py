@@ -72,7 +72,7 @@ def detect():
         if "No face detected" in str(e) or "Face could not be detected" in str(e):
              return error_response(
                 reason="no_face_detected",
-                message="Tidak ada wajah terdeteksi pada foto. Presensi gagal.",
+                message="Tidak ada wajah terdeteksi pada foto.",
                 status_code=422,
                 meta={
                     "timestamp": datetime.now().isoformat(),

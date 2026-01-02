@@ -128,7 +128,7 @@ Used for presence logic when no face is found in the uploaded photo.
 {
   "status": "failed",
   "reason": "no_face_detected",
-  "message": "Tidak ada wajah terdeteksi pada foto. Presensi gagal.",
+  "message": "Tidak ada wajah terdeteksi pada foto.",
   "meta": { ... }
 }
 ```
