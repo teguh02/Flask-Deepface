@@ -6,4 +6,4 @@ python-dotenv
 requests
 pandas
 tf-keras
-mediapipe
+mediapipe==0.10.9
