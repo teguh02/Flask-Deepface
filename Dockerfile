@@ -18,8 +18,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Pre-download DeepFace models to bake into image (prevents runtime timeouts)
 # We need: age_model_weights.h5 (~540MB)
+# PLACED BEFORE REQUIREMENTS to utilize Docker cache (requirements change often, models don't)
 RUN mkdir -p /root/.deepface/weights && \
-    curl -L "https://github.com/serengil/deepface_models/releases/download/v1.0/age_model_weights.h5" -o /root/.deepface/weights/age_model_weights.h5
+    if [ ! -f "/root/.deepface/weights/age_model_weights.h5" ]; then \
+        echo "Downloading Age Model..." && \
+        curl -L "https://github.com/serengil/deepface_models/releases/download/v1.0/age_model_weights.h5" -o /root/.deepface/weights/age_model_weights.h5; \
+    else \
+        echo "Age Model exists. Skipping."; \
+    fi
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
 COPY . .
